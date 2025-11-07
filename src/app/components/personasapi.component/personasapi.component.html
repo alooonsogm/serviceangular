@@ -1,0 +1,23 @@
+<div>
+    <h1>Personas API</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id persona</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (perso of personas; track perso) {
+                <tr>
+                    <td>{{perso.IdPersona}}</td>
+                    <td>{{perso.Nombre}}</td>
+                    <td>{{perso.Email}}</td>
+                    <td>{{perso.Edad}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
