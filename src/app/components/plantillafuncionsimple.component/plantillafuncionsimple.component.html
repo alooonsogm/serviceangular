@@ -1,0 +1,40 @@
+<div>
+    <h1>Plantilla funcion simple</h1>
+    <form #plantillasForm="ngForm">
+        <label>Selecciona funcion: </label>
+        <select name="cajaFuncion" #cajaFuncion class="form-control">
+            @for (funct of funciones; track funct) {
+                <option value={{funct}}>{{funct}}</option>
+            }
+        </select>
+        <br>
+        <button class="btn btn-dark" (click)="mostrarPlantilla()">Mostrar plantilla</button>
+    </form>
+    <br>
+    @if (plantillas) {
+        <table class="table">
+            <thead>
+                <th>ID empleado</th>
+                <th>ID hospital</th>
+                <th>ID sala</th>
+                <th>Apellido</th>
+                <th>Funcion</th>
+                <th>Turno</th>
+                <th>Salario</th>
+            </thead>
+            <tbody>
+                @for (planti of plantillas; track planti) {
+                    <tr>
+                        <td>{{planti.idEmpleado}}</td>
+                        <td>{{planti.idHospital}}</td>
+                        <td>{{planti.idSala}}</td>
+                        <td>{{planti.apellido}}</td>
+                        <td>{{planti.funcion}}</td>
+                        <td>{{planti.turno}}</td>
+                        <td>{{planti.salario}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
